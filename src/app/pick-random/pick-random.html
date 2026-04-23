@@ -1,0 +1,23 @@
+<input [(ngModel)]="inputText" placeholder="Skriv 3 saker..." id="randomInput">
+<button (click)="pickRandomly()">Välj åt mig!</button>
+
+
+    @if(result){
+        <p>Du fick:
+            <span class="result">{{ result }}</span>
+        </p>
+    }
+
+
+<!--träning av if och for-->
+@if(items.length > 0){
+    <p>Vad du valde mellan:</p>
+    <ul>
+@for(item of items; track $index){
+        <li [class.selected]="item === result"> {{ item }} </li>
+    }
+</ul>
+    }@else{
+        <p>Skriv något först! <span class="smiley">😬</span></p>
+    }
+

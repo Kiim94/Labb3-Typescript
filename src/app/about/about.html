@@ -1,0 +1,44 @@
+<div class="page-content">
+    <h1>Om laborationen</h1>
+        <p>Jag började tidigt dokumentera arbetet så att inget skulle glömmas bort.</p>
+    <h2>Skapa Angular-projekt</h2>
+        <p>Detta var faktiskt inga större problem. Genom att använda Git Bash och kommandot 
+            <b>ng new "projekt-namn"</b> så var det enkelt att skapa ett nytt projekt. Därefter
+        gå in i den nyskapade mappen och öppna en ny Git Bash, skriva kommandot <b>ng serve</b>
+        för att få en "live server".</p>
+        <p>Att skapa nya komponenter var inte heller ett större problem:</p>
+        <ul>
+            <li>Inuti projektmappen, med Git Bash: <b>ng generate component "namn-på-komponent"</b>,
+            helt enkelt <b>ng g c "namn-på-komponent"</b>.</li>
+            <li>Lägga till var på webbplatsen den nya komponenten ska finnas med <b>< app-komponent ></b></li>
+        </ul>
+        <p>Något jag upprepade gånger hade problem med och som jag nog i slutet av denna
+            kommer märka bättre att jag har missat är att jag flera gånger glömmer att i app.ts filen
+            importera nya komponenter. Ett flertal gånger visste jag att jag hade lagt till komponenten
+            i korrekt html fil - men inget syntes ändå.
+        </p>
+    <h2>Det går bättre!</h2>
+        <p>Märkte i denna laboration att skriva metoder i ts-filerna börjar gå bättre. Kanske att man 
+            börjar fatta galoppen så smått.
+        </p>
+        <p>Men kanske mest troligt att man inte gett sig på alltför svåra metoder/komponenter ännu.</p>
+    <h2>Lord have mercy...</h2>
+    <p>Fick problem med layout: <i><b>About</b></i> var mycket bredare än resterande, trots att bestämd max-bredd
+    hade satts i style.scss i root-mappen. Provade i <i><b>Abouts</b></i>
+    egen scss-fil, provade app.scss. Ingen skillnad märktes.</p>
+    <p>Gav upp och stängde ner allt. Startade upp nästa dag. Då såg det bra ut?!</p>
+    <p>Hade glömt den gyllene regeln med teknik: om det inte fungerar, stäng av och starta igen.</p>
+    <p>Detta belyser dock ett litet problem med Angular - i alla fall för min del. Det är tacksamt att man kan starta upp en 
+        utvecklingsmiljö snabbt genom att skapa ett angular-projekt, men det är också väldigt oerhört många olika 
+        filer som skapas och som man senare kan gå vilse bland.
+    </p>
+    <h2>Vad jag lärt mig</h2>
+    <p>Det kan vara svårt att veta vilken fil som egentligen gör vad, så att ge komponenterna bra och tydliga namn 
+        är något av det viktigaste.
+    </p>
+    <p>Det är vidare inte en alltför svår process att koppla allting: det värsta egentligen är att komma ihåg
+        imports och var de ska placeras: är de globala så importera dem i app.ts, därefter importera App i main.ts. 
+        Att skapa routes var egentligen inte heller särskilt komplicerat i slutändan, men där i början kunde det vara
+        problematiskt. 
+    </p>
+</div>

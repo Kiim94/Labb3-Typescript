@@ -1,0 +1,54 @@
+
+#containerConvert{
+    display:flex;
+    flex-direction:column;
+    gap:1.5rem;
+    .section{
+        display:flex;
+        flex-direction:column;
+        gap:0.5rem;
+        padding:1rem;
+        border-radius:8px;
+        background:#f3f3f3;
+        align-items:center;
+        input,select,button{
+            padding:0.5rem;
+            font-size:1rem;
+            border: 1px solid #ccc;
+            border-radius:6px;
+        }
+        label{
+            font-size:1.2rem;
+            font-weight: bold;
+        }
+        button{
+            background-color:#726e6e;
+            color:white;
+            cursor:pointer;
+            transition: background-color 0.2s ease;
+            &:hover{
+                background-color: #5e5a5a;
+            }
+        }
+    }
+    .section > *{
+        width:100%;
+        max-width:500px;
+    }
+}
+
+.flash{
+    animation: flash 0.3s ease;
+}
+
+
+@keyframes flash{
+    0%{
+        background-color: #dff7df;
+        transform: scale(1.03);
+    }
+    100%{
+        background-color:transparent;
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,47 @@
+<div class="page-content">
+    <h1>Konvertering</h1>
+    <p>Konvertera mellan olika värden!</p>
+    <p>Nedan kan du kontrollera några olika värden: längd, temperatur och valuta.</p>
+    <div id="containerConvert">
+        <div class="section">
+            <label for="length">Längd:</label>
+            <input id="length" type="number" [(ngModel)]="lengthValue">
+            <select [(ngModel)]="lengthType">
+                <option value="" disabled>Välj längd:</option>
+                <option value="meterFeet">Meter -> Feet</option>
+                <option value="feetMeter">Feet -> Meter</option>
+            </select>
+
+            <button (click)="convertLength()">Konvertera</button>
+            <div [class.flash]="animateLength"> {{ lengthResult }} </div>
+        </div>
+        <div class="section">
+
+            <label for="temp">Temperatur:</label>
+            <input id="temp" type="number" [(ngModel)]="tempValue">
+            <select [(ngModel)]="tempType">
+                <option value="" disabled>Välj temperatur:</option>
+                <option value="celFahr">Celsius -> Fahrenheit</option>
+                <option value="fahrCel">Fahrenheit -> Celsius</option>
+            </select>
+
+            <button (click)="convertTemp()">Konvertera</button>
+
+            <div [class.flash]="animateTemp"> {{ tempResult }} </div>
+        </div>
+        <div class="section">
+            
+            <label for="currency">Valuta:</label>
+            <input id="currency" type="number" [(ngModel)]="currencyValue">
+            <select [(ngModel)]="currencyType">
+                <option value="" disabled>Välj valuta:</option>
+                <option value="sekEur">Svensk Krona -> Euro</option>
+                <option value="eurSek">Euro -> Svensk Krona</option>
+            </select>
+
+            <button (click)="convertCurrency()">Konvertera</button>
+            <div [class.flash]="animateCurrency"> {{ currencyResult }} </div>
+            <p>Märk väl att valutor rör sig hela tiden: resultatet du får här kanske inte stämmer till 100% med verkligheten.</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+img{
+    max-width:700px;
+    width:100%;
+    height:auto;
+    display:block;
+    border-radius:10px;
+    box-shadow: 1px 6px 5px rgba(0,0,0,0.5);
+}
+p{
+    text-align:center;
+}
+app-pick-random{
+    display:flex;
+    gap:0.5rem;
+    flex-direction:column;
+    justify-content:center;
+    margin-top: 1rem;
+}
