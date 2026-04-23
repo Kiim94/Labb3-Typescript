@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build:gh": "ng build --configuration production --base-href /Labb3-Typescript/",
+    "deploy": "gh-pages -d dist/labb3/browser -f",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
