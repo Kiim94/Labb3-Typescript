@@ -4,8 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "_comment": "Github Pages buld + deploy. Build: Angular bakar färdig app (dist). Deploy: kopiera index till 404 (spa fallback), packa dist o skicka till gh-pages för att ersätta tidigare version",
     "build:gh": "ng build --configuration production --base-href /Labb3-Typescript/",
-    "deploy": "gh-pages -d dist/labb3/browser -f",
+    "deploy": "npm run build:gh && cp dist/labb3/browser/index.html dist/labb3/browser/404.html && gh-pages -d dist/labb3/browser -f",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
