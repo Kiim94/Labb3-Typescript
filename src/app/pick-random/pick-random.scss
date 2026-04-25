@@ -38,3 +38,12 @@ ul{
         display:inline-block;
     }
 }
+#randomBtn{
+    background-color:#726e6e;
+    color:white;
+    cursor:pointer;
+    transition: background-color 0.2s ease;
+    &:hover{
+        background-color: #444141;
+    }
+}
