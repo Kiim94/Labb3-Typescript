@@ -13,7 +13,16 @@
             </select>
 
             <button (click)="convertLength()">Konvertera</button>
-            <div [class.flash]="animateLength"> {{ lengthResult }} </div>
+            <div [class.flash]="animateLength" class ="result-box"> 
+                @if(lengthResult !== null){
+                    {{ lengthResult }} 
+                    @if(lengthType === "meterFeet"){
+                        <span>m</span>
+                    }@else if(lengthType === "feetMeter"){
+                        <span>ft</span>
+                    }
+                }
+            </div>
         </div>
         <div class="section">
 
@@ -27,7 +36,16 @@
 
             <button (click)="convertTemp()">Konvertera</button>
 
-            <div [class.flash]="animateTemp"> {{ tempResult }} </div>
+            <div [class.flash]="animateTemp" class="result-box"> 
+                @if(tempResult !== null){
+                    {{ tempResult }} 
+                    @if(tempType === "celFahr"){
+                        <span>°F</span>
+                    }@else if(tempType === "fahrCel"){
+                        <span>°C</span>
+                    }
+                }
+            </div>
         </div>
         <div class="section">
             
@@ -40,7 +58,19 @@
             </select>
 
             <button (click)="convertCurrency()">Konvertera</button>
-            <div [class.flash]="animateCurrency"> {{ currencyResult }} </div>
+            <div [class.flash]="animateCurrency" class="result-box"> 
+                @if(currencyResult !== null){
+                    {{ currencyResult }} 
+                    @if(currencyType === "sekEur"){
+                        <span>€</span>
+                    }@else if(currencyType === "eurSek"){
+                        <span>kr</span>
+                    }
+                }
+                
+            </div>
+
+
             <p>Märk väl att valutor rör sig hela tiden: resultatet du får här kanske inte stämmer till 100% med verkligheten.</p>
         </div>
     </div>

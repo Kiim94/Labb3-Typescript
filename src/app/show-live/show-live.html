@@ -1,0 +1,16 @@
+@if(name){
+    <p>Välkommen till laboration 3 {{name}}! Vi har väntat på dig...</p>
+}
+
+<input 
+type="text" 
+[(ngModel)]="name" 
+placeholder="Skriv ditt namn här..." 
+(mouseover)="onMouseOver()" 
+(mouseout)="onMouseOut()">
+@if(isHovering){
+    <p id="hovering">Du pekar på rutan nu!</p>
+}@else if(!isHovering){
+    <p id="notHovering">Nu pekar du inte på rutan!</p>
+}
+

@@ -1,0 +1,21 @@
+p{
+    text-align:center;
+    
+}
+#hovering{
+    font-weight:bold;
+    color:darkgreen;
+}
+#notHovering{
+    font-weight:bold;
+    color:crimson;
+}
+input{
+    display:block;
+    margin: 0 auto;
+    padding:0.5rem;
+    border-radius:10px;
+    border:none;
+    width:100%;
+    max-width:300px;
+}

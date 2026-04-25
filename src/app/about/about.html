@@ -1,6 +1,5 @@
 <div class="page-content">
     <h1>Om laborationen</h1>
-        <p>Jag började tidigt dokumentera arbetet så att inget skulle glömmas bort.</p>
     <h2>Skapa Angular-projekt</h2>
         <p>Detta var faktiskt inga större problem. Genom att använda Git Bash och kommandot 
             <b>ng new "projekt-namn"</b> så var det enkelt att skapa ett nytt projekt. Därefter
@@ -17,28 +16,56 @@
             importera nya komponenter. Ett flertal gånger visste jag att jag hade lagt till komponenten
             i korrekt html fil - men inget syntes ändå.
         </p>
+
+
     <h2>Det går bättre!</h2>
         <p>Märkte i denna laboration att skriva metoder i ts-filerna börjar gå bättre. Kanske att man 
             börjar fatta galoppen så smått.
         </p>
+        <p>Även gott om övning med "beginner"-JavaScript, vilket kändes ganska skönt och uppfriskande. Vissa delar 
+            blev upptäckta på nytt - som att avrunda till max 2 decimaler
+        </p>
         <p>Men kanske mest troligt att man inte gett sig på alltför svåra metoder/komponenter ännu.</p>
+
+
     <h2>Lord have mercy...</h2>
     <p>Fick problem med layout: <i><b>About</b></i> var mycket bredare än resterande, trots att bestämd max-bredd
     hade satts i style.scss i root-mappen. Provade i <i><b>Abouts</b></i>
     egen scss-fil, provade app.scss. Ingen skillnad märktes.</p>
     <p>Gav upp och stängde ner allt. Startade upp nästa dag. Då såg det bra ut?!</p>
     <p>Hade glömt den gyllene regeln med teknik: om det inte fungerar, stäng av och starta igen.</p>
-    <p>Detta belyser dock ett litet problem med Angular - i alla fall för min del. Det är tacksamt att man kan starta upp en 
-        utvecklingsmiljö snabbt genom att skapa ett angular-projekt, men det är också väldigt oerhört många olika 
-        filer som skapas och som man senare kan gå vilse bland.
+    <p>Det är tacksamt att man kan starta upp en utvecklingsmiljö snabbt genom att skapa ett angular-projekt, men det är också väldigt oerhört många olika 
+        filer som skapas och som man senare kan gå vilse bland. För egen del tror jag att jag har det lättare vid
+        uppbyggnad av projekt när jag börjar med en mindre bas (exempelvis Vite brukar ge ungefär en fil av varje att jobba med),
+        och därefter kan bygga vidare efter behov.
     </p>
+    <p>Fick också lite problem när bilden på startsidan skulle bli synlig. Det fungerade bra innan publicering, men efter syntes
+        ingen bild överhuvudtaget. Nu i efterhand verkar det ha varit ett referensfel (skrev /images samt ./images och även ../images
+        utan några resultat), men ett tag upplevdes det katastrofalt. Särskilt som jag inte då visste om jag hade placerat bilden 
+        på fel ställe (vilket internet tyckte, då de flesta verkar placera dem i en assets mapp, vilket jag inte hade) eller om det var
+        något med själva Angular som strulade.
+    </p>
+    <p>Mycket på en gång blir lite snurrigt - men som alltid: det kanske är ovanan som talar.</p>
+    <p>Försökte använda *ngIf istället för @ if för att testa hur det var, men det gick inte riktigt. Anledningen upptäckte jag 
+        långt senare, och då ville jag inte ändra: problemet låg nog i att jag inte hade importerat CommonModule.
+    </p>
+
     <h2>Vad jag lärt mig</h2>
     <p>Det kan vara svårt att veta vilken fil som egentligen gör vad, så att ge komponenterna bra och tydliga namn 
         är något av det viktigaste.
+    </p>
+    <p>En god tanke i fortsättningen kan vara att separera och spara filer efter deras syfte: kanske ha "sido-filer", de filer
+        man kan navigera på webbplatsen mellan i en egen mapp, komponenter som knappar, formulär osv. i egna. Det kanske kan
+        underlätta navigeringen.
     </p>
     <p>Det är vidare inte en alltför svår process att koppla allting: det värsta egentligen är att komma ihåg
         imports och var de ska placeras: är de globala så importera dem i app.ts, därefter importera App i main.ts. 
         Att skapa routes var egentligen inte heller särskilt komplicerat i slutändan, men där i början kunde det vara
         problematiskt. 
+    </p>
+    <p>Tyckte mest om att se saker förändras "live", med ngModule.</p>
+    <h2>Vad jag behöver öva vidare på</h2>
+    <p>Just nu känns det som allt, men framförallt tror jag att det är kombinationen av bindings i vad som normalt är 
+        vanliga HTML-filer samt import och routes. Det är väl ungefär allt nytt, tror jag!
     </p>
 </div>
