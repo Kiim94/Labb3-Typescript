@@ -4,6 +4,7 @@ import { Navigation } from "./navigation/navigation"
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [RouterOutlet, Navigation],
   templateUrl: './app.html',
   styleUrl: './app.scss'
