@@ -1,3 +1,5 @@
+<!--ngModel: förändringar syns "live": här "sparas" värden som skrivs in o förbereds för användning. Kallas two-way data binding.
+(click) är ungefär JS-eventListener: väntar på ett klick, när det sker, aktivera metoden pickRandomly()-->
 <input [(ngModel)]="inputText" placeholder="Skriv 3 saker..." id="randomInput">
 <button (click)="pickRandomly()" id="randomBtn">Välj åt mig!</button>
 
@@ -9,7 +11,9 @@
     }
 
 
-<!--träning av if och for-->
+<!--träning av if och for. Om items.length, m.a.o längd av inskrivna föremål är mer än 0, skapa en loop som skriver ut li element-->
+<!--track $index: följer index och ser om ngt ändras. Ändrar om något nytt läggs-->
+
 @if(items.length > 0){
     <p>Vad du valde mellan:</p>
     <ul>
@@ -17,6 +21,7 @@
         <li [class.selected]="item === result"> {{ item }} </li>
     }
 </ul>
+<!--om ingenting har skrivis i input och skickats visas meddelandet nedan-->
     }@else{
         <p>Skriv något först! <span class="smiley">😬</span></p>
     }

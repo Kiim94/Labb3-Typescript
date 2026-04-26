@@ -11,6 +11,8 @@ import { FormsModule } from "@angular/forms";
 export class Converter {
 
   //pga att det bara är konvertering av enkla data, ingen interface behövs
+  //number | null är null från början. 
+  //Innan var det satt till 0, gjorde uträkning vid klick av knapp utan användarens input
   lengthValue: number | null = null;
   lengthResult: number | null = null;
   lengthType = "";
@@ -22,6 +24,7 @@ export class Converter {
   currencyValue: number | null = null;
   currencyType="";
   currencyResult: number | null = null;
+
   //ungefär hur mycket en euro är i svenska kronor
   rate = 10.77;
 
@@ -33,8 +36,9 @@ export class Converter {
   //konverteringar:
   //längd, meter till feet
   convertLength(){
-    //om inget är inskrivet i input och man försöker klicka på knapp, inget händer
-    if(this.lengthValue === null || this.lengthValue === undefined){
+    //om inget är inskrivet i input och man försöker klicka på knapp, inget händer. 
+    //Skriver man in 0 får man resultat dock
+    if(this.lengthValue === null){
       return;
     }
     if(this.lengthType === "meterFeet"){
@@ -44,14 +48,14 @@ export class Converter {
     }
     this.animateLength = true;
     setTimeout(() => {
-      this.animateLength = false, 300
-    })
+      this.animateLength = false;
+    }, 300);
   }
 
   //celsius till fahrenheit
   convertTemp(){
-    //om inget är inskrivet i input och man försöker klicka på knapp, inget händer
-    if(this.tempValue === null || this.tempValue === undefined){
+    //om inget är inskrivet i input och man försöker klicka på knapp, inget händer.
+    if(this.tempValue === null){
       return
     }
     if(this.tempType === "celFahr"){
@@ -60,16 +64,17 @@ export class Converter {
       this.tempResult = Number(((this.tempValue - 32) * 5/9).toFixed(2));
     }
 
+    //om ovan går igenom, starta animation, avsluta animation efter 300 ms
     this.animateTemp = true;
     setTimeout(() => {
-      this.animateTemp = false, 300
-    })
+      this.animateTemp = false;
+    },300)
   }
 
   //svensk krona till euro
   convertCurrency(){
     //om inget är inskrivet i input och man försöker klicka på knapp, inget händer
-    if(this.currencyValue === null || this.currencyValue === undefined){
+    if(this.currencyValue === null){
       return;
     }
     if(this.currencyType === "sekEur"){
@@ -80,7 +85,7 @@ export class Converter {
 
     this.animateCurrency = true;
     setTimeout(() => {
-      this.animateCurrency = false, 300
-    })
+      this.animateCurrency = false;
+    }, 300)
   }
 }

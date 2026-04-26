@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Hello } from './hello';
+import { HelloComponent } from './hello';
 
 describe('Hello', () => {
   let component: Hello;
@@ -8,10 +8,10 @@ describe('Hello', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Hello],
+      imports: [HelloComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Hello);
+    fixture = TestBed.createComponent(HelloComponent);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

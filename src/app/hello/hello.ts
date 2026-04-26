@@ -8,15 +8,17 @@ import { Component, Input } from '@angular/core';
   template: '<h3>{{ greeting }}</h3>',
 })
 export class HelloComponent {
-  @Input() name = "";
+  //räknar ut och visar häslning beroende på tidpunkt
   get greeting(): string{
     const hour = new Date().getHours();
-    if(hour < 12){
+    if(hour >= 5 && hour < 12){
       return "🌅 God morgon! 🌅";
-    }else if(hour > 12){
+    }else if(hour >= 12 && hour < 18){
       return "🌞 God eftermiddag! 🌞";
+    }else if(hour >= 18 && hour < 22){
+      return "🌄 God kväll! 🌄";
     }else{
-      return "🌙 God kväll! 🌙";
+      return "God natt! 🦉"
     }
   }
 }

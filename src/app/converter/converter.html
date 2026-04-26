@@ -5,6 +5,10 @@
     <div id="containerConvert">
         <div class="section">
             <label for="length">Längd:</label>
+
+            <!--ngModel: uppdaterar variabler i ts.fil i bakgrunden (lengthValue och lengthType). 
+            Resultat syns först när man klickar på knapp.
+            Använt samma kodstruktur för resterande konverteringar-->
             <input id="length" type="number" [(ngModel)]="lengthValue">
             <select [(ngModel)]="lengthType">
                 <option value="" disabled>Välj längd:</option>
@@ -12,8 +16,12 @@
                 <option value="feetMeter">Feet -> Meter</option>
             </select>
 
+            <!--klick på knapp kallar på metoden convertLength() som räknar ut.
+            class.flash: property binding, väntar på boolean. Om true (något räknas ut),
+            visa liten animation som visar resultatet.
+            Använt samma kodstruktur för resterande konverterings-knappar-->
             <button (click)="convertLength()">Konvertera</button>
-            <div [class.flash]="animateLength" class ="result-box"> 
+            <div [class.flash]="animateLength"> 
                 @if(lengthResult !== null){
                     {{ lengthResult }} 
                     @if(lengthType === "meterFeet"){
@@ -36,7 +44,7 @@
 
             <button (click)="convertTemp()">Konvertera</button>
 
-            <div [class.flash]="animateTemp" class="result-box"> 
+            <div [class.flash]="animateTemp"> 
                 @if(tempResult !== null){
                     {{ tempResult }} 
                     @if(tempType === "celFahr"){
@@ -58,7 +66,7 @@
             </select>
 
             <button (click)="convertCurrency()">Konvertera</button>
-            <div [class.flash]="animateCurrency" class="result-box"> 
+            <div [class.flash]="animateCurrency"> 
                 @if(currencyResult !== null){
                     {{ currencyResult }} 
                     @if(currencyType === "sekEur"){

@@ -1,7 +1,9 @@
+<!--om namn finns inskrivet/börjar skrivas i input, visa texten under med namnet eller ordet som skrivs in-->
 @if(name){
     <p>Välkommen till laboration 3 {{name}}! Vi har väntat på dig...</p>
 }
-
+<!--ngModel: visar ändring "i realtid". mouseover och mouseout är typ JS-eventListener.
+När muspekare hovrar över input: visa en text. Slutar hovra: visa en annan-->
 <input 
 type="text" 
 [(ngModel)]="name" 
